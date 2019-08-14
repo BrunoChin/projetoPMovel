@@ -3,9 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-final localZone = "America/Maceio";
+String localZone;
 var resBody;
 var resBodyZones;
+List zonas;
 
 void main() => runApp(MaterialApp(
   theme: new ThemeData(
@@ -24,7 +25,7 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    _getDataZones();
+    localZone = "America/Maceio";
   }
 
   Future<Map> _getDataZoneTime() async{
@@ -35,26 +36,21 @@ class _HomeState extends State<Home> {
     return resBody;
   }
 
-  Future<List<String>> _getDataZones() async{
+  Future<Map> _getDataZones() async{
     http.Response resposta = await http.get("http://api.timezonedb.com/v2.1/list-time-zone?key=2OAR4HS329MU&format=json");
 
-    resBodyZones = json.decode(resposta.body)["zones"];
+    resBodyZones = json.decode(resposta.body);
 
-    List<String> timesZones;
+    print(resBodyZones);
 
-    for(var temp in resBodyZones){
-      print(temp);
-      timesZones.add(temp.toString());
-    }
-
-    return timesZones;
+    return resBodyZones;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("World's times zones"),
+        title: Text("No seu Tempo"),
       ),
       body: FutureBuilder<Map>(
         future: _getDataZoneTime(),
@@ -91,7 +87,7 @@ class _HomeState extends State<Home> {
                             new Text(
                               "$localZone",
                               style: new TextStyle(fontSize:37.0,
-                                  color: const Color(0xFF000000),
+                                  color: Colors.white,
                                   fontWeight: FontWeight.w200,
                                   fontFamily: "Roboto"),
                             ),
@@ -105,14 +101,15 @@ class _HomeState extends State<Home> {
                             new Text(
                               resBody["formatted"],
                               style: new TextStyle(fontSize:35.0,
-                                  //color: const Color(Colors.green),
+                                  color: Colors.white,
                                   fontWeight: FontWeight.w200,
                                   fontFamily: "Roboto"),
                             ),
 
                             padding: const EdgeInsets.all(0.0),
                             alignment: Alignment.bottomCenter,
-                          )
+                          ),
+
                         ]
 
                     ),
@@ -128,24 +125,34 @@ class _HomeState extends State<Home> {
             padding: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 0.0),
             child: Text("Local Zones", style: TextStyle(fontSize: 30.0),)
           ),
-          FutureBuilder<List<String>>(
+          FutureBuilder<Map>(
             future: _getDataZones(),
             builder: (BuildContext context, AsyncSnapshot snapshot){
 
-              var data = json.decode(snapshot.data);
-
-              if(snapshot.data == null){
+              if(snapshot.connectionState == ConnectionState.waiting || snapshot.connectionState == ConnectionState.none){
                 return Container(
-                  child: Text("Carredando..."),
-                );
-              }
-              return ListView.builder(
-                itemCount: 10,
-                itemBuilder: (BuildContext context, int index){
-                  return ListTile(
-                    title: Text(data[index]["zoneName"]),
+                  child: Center(
+                    child: Text("Carredando..."),
+                    )
                   );
-                });
+              }
+              return Expanded(
+                child: ListView.builder(
+                    itemCount: 425,
+                    itemBuilder: (BuildContext context, int index){
+                      if(resBodyZones["zones"][index]["zoneName"] != null){
+                        return ListTile(
+                          title: Text(resBodyZones["zones"][index]["zoneName"]),
+                          onLongPress: (){
+                            setState(() {
+                              localZone = resBodyZones["zones"][index]["zoneName"];
+                            });
+                            print(localZone);
+                          },
+                        );
+                      }
+                    }),
+              ); 
             },
           ),
         ],),
