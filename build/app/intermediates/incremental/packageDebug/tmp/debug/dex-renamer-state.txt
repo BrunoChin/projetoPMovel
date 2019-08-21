@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#Wed Aug 21 15:26:01 BRT 2019
+#Wed Aug 21 16:21:53 BRT 2019
 base.0=/home/aluno/AndroidStudioProjects/projetoPMovel/build/app/intermediates/transforms/dexMerger/debug/0
-=======
-#Wed Aug 14 15:19:10 GMT-03:00 2019
-base.0=C\:\\Users\\aluno.ifal\\AndroidStudioProjects\\projetoPMovel\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
->>>>>>> de20dd7d798191f73ed592955025a9abfe5d6ef9
 path.0=classes.dex
 renamed.0=classes.dex
