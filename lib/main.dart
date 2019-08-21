@@ -7,6 +7,7 @@ var resBody;
 
 void main() =>
     runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: new ThemeData(
         brightness: Brightness.light,
       ),
@@ -55,6 +56,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         backgroundColor: Colors.lightBlueAccent,
         title: Text("No Seu Tempo"),
@@ -100,7 +102,7 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           padding: const EdgeInsets.fromLTRB(
-                              0.0, 0.0, 1.0, 50.0),
+                              0.0, 20.0, 0.0, 50.0),
                           alignment: Alignment.topLeft,
                         ),
 
@@ -113,7 +115,7 @@ class _HomeState extends State<Home> {
                         Container(
                           margin: EdgeInsets.fromLTRB(0.0, 50.0, 0.0, 0.0),
                           child: TextField(
-                            decoration: InputDecoration(labelText: "Buscar Local", border: OutlineInputBorder()),
+                            decoration: InputDecoration(labelText: "Buscar Local", hintText: "Ex.: Amarica/Maceio", border: OutlineInputBorder()),
                             controller: _localControler,
                             onSubmitted: _setZone,
                           ),
@@ -152,8 +154,8 @@ class _HomeState extends State<Home> {
                           title: Text(resBodyZones["zones"][index]["zoneName"]),
                           onLongPress: () {
                             setState(() {
-                              localZone =
-                              resBodyZones["zones"][index]["zoneName"];
+                              localZone = resBodyZones["zones"][index]["zoneName"];
+                              _localControler.text = resBodyZones["zones"][index]["zoneName"];
                             });
                           },
                         );

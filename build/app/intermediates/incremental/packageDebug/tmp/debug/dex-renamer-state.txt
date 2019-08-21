@@ -1,4 +1,4 @@
-#Wed Aug 21 16:21:53 BRT 2019
+#Wed Aug 21 17:31:38 BRT 2019
 base.0=/home/aluno/AndroidStudioProjects/projetoPMovel/build/app/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

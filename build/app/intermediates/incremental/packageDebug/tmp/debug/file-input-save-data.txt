@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Aug 21 16:21:55 BRT 2019
+#Wed Aug 21 17:31:40 BRT 2019
 4.path=flutter_assets/vm_snapshot_data
 8.set=NATIVE_RESOURCE
 6.path=flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
