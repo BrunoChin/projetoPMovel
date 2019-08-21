@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/aluno/AndroidStudioProjects/projetoPMovel/android/app/src/main/assets"/><source path="/home/aluno/AndroidStudioProjects/projetoPMovel/build/app/intermediates/shader_assets/debug/compileDebugShaders/out"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/aluno/AndroidStudioProjects/projetoPMovel/android/app/src/debug/assets"/></dataSet></merger>
+=======
+<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\aluno.ifal\AndroidStudioProjects\projetoPMovel\android\app\src\main\assets"/><source path="C:\Users\aluno.ifal\AndroidStudioProjects\projetoPMovel\build\app\intermediates\shader_assets\debug\compileDebugShaders\out"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\aluno.ifal\AndroidStudioProjects\projetoPMovel\android\app\src\debug\assets"/></dataSet></merger>
+>>>>>>> de20dd7d798191f73ed592955025a9abfe5d6ef9

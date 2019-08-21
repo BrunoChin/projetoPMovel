@@ -2,7 +2,13 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="android" name="Android">
+<<<<<<< HEAD
       <configuration />
+=======
+      <configuration>
+        <option name="ALLOW_USER_CONFIGURATION" value="false" />
+      </configuration>
+>>>>>>> de20dd7d798191f73ed592955025a9abfe5d6ef9
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
@@ -11,9 +17,14 @@
       <sourceFolder url="file://$MODULE_DIR$/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" generated="true" />
     </content>
+<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="Android API 26 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />
     <orderEntry type="library" name="Dart Packages" level="project" />
+=======
+    <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+>>>>>>> de20dd7d798191f73ed592955025a9abfe5d6ef9
   </component>
 </module>
